@@ -21,7 +21,7 @@ int main() {
         }
     }
 
-    if (!possible) {
+    if (possible==0) {
         printf("none");
     }
 
