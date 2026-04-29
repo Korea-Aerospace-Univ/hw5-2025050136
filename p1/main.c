@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int N;
     scanf("%d", &N);
 
-    int possible=0;
+    bool possible=false;
 
     for (int i = 1 ; i<= (N/900) ; i++) {
         for (int j = 2 ; j <= (N/750) ; j+=2) {
@@ -13,7 +13,7 @@ int main() {
                 if (900 * i + 750 * j + 200 * k == N) {
                     if (k < i || k < j) {
                         printf("%d %d %d\n", i, j, k);
-                        possible=1;
+                        possible=true;
                     }
                 }
 
@@ -21,7 +21,7 @@ int main() {
         }
     }
 
-    if (possible==0) {
+    if (!possible) {
         printf("none");
     }
 
